@@ -23,20 +23,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-twitter:before {
+    content: "\e602";
+    color: #4086CD;
+}
+.icon-home:before {
+    content: "\e603";
+}
 .icon-stackoverflow:before {
-	content: "\e600";
+    content: "\e600";
 }
 .icon-github:before {
-	content: "\e601";
-}
-.icon-twitter .path1:before {
-	content: "\e602";
-	color: rgb(30, 190, 240);
-}
-.icon-twitter .path2:before {
-	content: "\e603";
-	margin-left: -1em;
-	color: rgb(255, 255, 255);
+    content: "\e601";
 }
 
 html, body, div, span, applet, object, iframe,
@@ -135,12 +133,19 @@ table {
 .social a > span {
     color: #000;
     font-size: 48px;
-    -webkit-transition: all 1s;
-       -moz-transition: all 1s;
-        -ms-transition: all 1s;
-         -o-transition: all 1s;
-            transition: all 1s;
+    -webkit-transition: all .5s;
+       -moz-transition: all .5s;
+        -ms-transition: all .5s;
+         -o-transition: all .5s;
+            transition: all .5s;
     display: inline-table;
+}
+
+.social a > .icon-twitter {
+    font-size: 64px;
+    position: relative;
+    top: 9px;
+    margin: 0 -10px;
 }
 
 .social a > span.icon-stackoverflow {
@@ -152,11 +157,11 @@ table {
 }
 
 .social a > span:hover {
-    -webkit-transform: scale(1.2,1.2);
-       -moz-transform: scale(1.2,1.2);
-        -ms-transform: scale(1.2,1.2);
-         -o-transform: scale(1.2,1.2);
-            transform: scale(1.2,1.2);
+    -webkit-transform: scale(1.5,1.5);
+       -moz-transform: scale(1.5,1.5);
+        -ms-transform: scale(1.5,1.5);
+         -o-transform: scale(1.5,1.5);
+            transform: scale(1.5,1.5);
 }
 
 .svg-text {
@@ -167,11 +172,13 @@ table {
     stroke-dashoffset: 1100;
     transition: all 2s linear;
     -webkit-transition: all 2s linear;
-    animation: dash 5.5s linear forwards,
-               background 1s linear 5s forwards;
     -webkit-animation: dash 5.5s linear forwards,
                background 1s linear 5s forwards;
     -moz-animation: dash 5.5s linear forwards,
+               background 1s linear 5s forwards;
+    -o-animation: dash 5.5s linear forwards,
+               background 1s linear 5s forwards;
+    animation: dash 5.5s linear forwards,
                background 1s linear 5s forwards;
 }
 
@@ -181,7 +188,25 @@ table {
   }
 }
 
+@-moz-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-o-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-moz-keyframes dash {
   to {
     stroke-dashoffset: 0;
   }
